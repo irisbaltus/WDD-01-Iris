@@ -9,13 +9,13 @@ body{
 }
 
 :root{
- --background-color-afro: #304955;
+ --background-color-afro: #c7525e;
  --background-gradient-color-afro: radial-gradient(#304955, #0d2e49); 
- --background-color-jazz: #801818;
+ --background-color-jazz: #6b1d10;
  --background-gradient-color-jazz: repeating-linear-gradient(#e01f2d, #943c22); 
- --background-color-rnb: #c46240;
+ --background-color-rnb: #0000ff;
  --background-gradient-color-rnb: repeating-radial-gradient(#767e20, #43470b); 
- --background-color-pop: #801818;
+ --background-color-pop: #337761;
  --background-gradient-color-pop: repeating-linear-gradient(#e01f2d, #943c22);
  /* --background-color-afro: #c46240; */
  /* --background-gradient-color-jazz: radial-gradient(#beb15b, #d5cfac);  */
@@ -23,8 +23,8 @@ body{
  --color-bullet-dark-jazz: #000;
  --color-bullet-light-jazz: #fff;
 
- --color-bullet-dark-afro: linear-gradient(#0c263e, #12242c);
- --color-bullet-light-afro: linear-gradient(#faeed9, #caa78e);
+ --color-bullet-dark-afro: linear-gradient(#000 ,#0c263e, #12242c);
+ --color-bullet-light-afro: linear-gradient(#fff, #faeed9, #caa78e);
 
  --color-bullet-dark-rnb: #4A5D23;
  --color-bullet-light-rnb: #8A9A5B;
@@ -76,8 +76,10 @@ body{
 
 body{
     color: var(--font-color);
-
+    background-color: rgb(48, 73, 85);
 }
+
+
 
 h1{
     font-family:var(--font-montserrat-bold);
@@ -100,11 +102,14 @@ h2{
     margin: var(--margin-width);
     font-family:var(--font-montserrat-reg);
     font-weight: 200;
-    /* overflow: hidden; */
+    
     grid-row: 5 / 6;
     grid-column: 1;
     width: 100vw;
     align-self: end;
+
+    position: fixed;
+    bottom: 0;
 
 }
 
@@ -141,6 +146,8 @@ main{
     z-index: -10;
     background-blend-mode: multiply;
 
+    background-image: url('img/noise.jpg');
+
 }
 
 section{
@@ -153,6 +160,8 @@ section{
     display: flex;
     flex-direction: column;
 
+    
+
 }
 
 .gradient-bullet-dark{
@@ -162,25 +171,25 @@ section{
     opacity: 100%;
     border-radius: 70%;
     z-index: 10;
-    filter: blur(5rem);
+    filter: blur(7rem) drop-shadow(16px 16px 20px #000);
 }
 
 .gradient-bullet-light{
     background: var(--color-bullet-light-afro);
     opacity: 100%;
     border-radius: 50%;
-    z-index: 10;
-    filter: blur(7rem);
+    z-index: 5;
+    filter: blur(9rem);
 
 }
 
 .gradient-container span:nth-of-type(1){
     grid-column: 1 / -1;
-    grid-row: 1;
+    grid-row: 1 / 2;
     justify-self: end;
 
-    width: 20rem;
-    aspect-ratio: 1.5;
+    width: min(50%, 20em);
+    aspect-ratio: 1;
 }
 
 .gradient-container span:nth-of-type(2){
@@ -188,24 +197,33 @@ section{
     grid-row: 2 / 3;
     justify-self: center;
 
-    width: min(7rem, 20vw);
-    aspect-ratio: 1 / 2;  
+    width: min(15rem, 40vw);
+    aspect-ratio: 3 / 4
 }
 
 .gradient-container span:nth-of-type(3){
-    grid-column: 2;
-    grid-row: 4 / 5;
-    width: min(12rem, 40vw);
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+    align-self: end;
+    width: min(20rem, 40vw);
     aspect-ratio: 1;
 }
 
 .gradient-container span:nth-of-type(4){
     grid-column: 1;
-    grid-row: 1 / -1;
+    /* grid-row: 1 / -1; */
     align-self: end;
+    grid-row: 2 / 3;
     
-    width: 20rem;
+    width: min(60vw, 15em);
     aspect-ratio: 1;
+}
+
+.rnb .gradient-container  span:nth-of-type(1){
+    grid-column: 1;
+    grid-row: 2 / 3;
+
 }
 
 .scroll{
@@ -223,19 +241,19 @@ section{
 
     }
     25%{ 
-        background-color: var(--background-color-afro);
+        background-color: var(--background-color-jazz);
 
     }
     50%{ 
-        background-color: var(--background-color-rnb);
+        background-color: var(--background-color-afro);
 
     }
     75%{ 
-        background-color: var(--background-color-pop);
+        background-color: var(--background-color-rnb);
 
     }
     100%{
-        background-color: #0ff9e2;
+        background-color: var(--background-color-pop);
     }
 
     
@@ -248,7 +266,7 @@ section{
     /* height: 100%; */
 
     grid-column: 1;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
 
 }
 
@@ -263,7 +281,7 @@ section{
     /* height: 100%; */
 
     grid-column: 1;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
 
 }
 
@@ -278,7 +296,7 @@ section{
     /* height: 100%; */
 
     grid-column: 1;
-    grid-row: 3 / 4;
+    grid-row: 5 / 6;
 
 }
 
@@ -293,7 +311,7 @@ section{
     /* height: 100%; */
 
     grid-row: 1;
-    grid-row: 4 / 5;
+    grid-row: 7 / 8
 
 }
 
