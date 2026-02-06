@@ -89,13 +89,22 @@ h1{
     font-size: min(2rem, 8vw);
 }
 
+header{
+
+    position: fixed;
+
+}
+
 h2{
     font-size: min(2rem, 8vw);
     margin: var(--margin-width);
     font-family:var(--font-montserrat-reg);
     font-weight: 200;
     /* overflow: hidden; */
-    grid-row: 2 / 3;
+    grid-row: 5 / 6;
+    grid-column: 1;
+    width: 100vw;
+    align-self: end;
 
 }
 
@@ -107,11 +116,13 @@ h2{
 
 }
 main{
-    height: 92vh;
+    /* height: 92vh;
     display: grid;
-    align-items: end;
+    align-items: end; */
+    display: flex;
+    flex-direction: column;
 }
-.italic-font{
+.font-italic{
      font-family:var(--font-montserrat-italic-bold);
 
 }
@@ -119,12 +130,12 @@ main{
 
 .gradient-container{
     display: grid;
-    grid-template-columns: repeat(6, 20%);
-    grid-template-rows: repeat(6, 20%);
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(8, 12.5%);
     width: 100vw;
-    height: 100vh;
+    height: 400vh;
 
-    position: fixed;
+    /* position: absolute; */
     top: 0;
 
     z-index: -10;
@@ -133,10 +144,14 @@ main{
 }
 
 section{
-    display: grid;
+    /* display: grid;
     grid-template-rows: repeat(4, 25%);
     grid-template-columns: repeat(4, 25%);
+    height: 400vh; */
+
     height: 400vh;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -194,46 +209,94 @@ section{
 }
 
 .scroll{
-    animation-timeline: view();
 	animation-name: scrollColorChange;
 	animation-timing-function: ease-out;
 	animation-fill-mode: both;
-	animation-range: contain;
+	animation-range: entry contain;
+    animation-timeline: view();
 
 }
 
 @keyframes scrollColorChange {
-    to{
-        background: var(--background-color-jazz);
+    0%{ 
+        background-color: var(--background-color-jazz);
+
+    }
+    25%{ 
+        background-color: var(--background-color-afro);
+
+    }
+    50%{ 
+        background-color: var(--background-color-rnb);
+
+    }
+    75%{ 
+        background-color: var(--background-color-pop);
+
+    }
+    100%{
+        background-color: #0ff9e2;
     }
 
     
 }
 
-.scroll {
-	background: var(--background-gradient-color-afro);
-	animation-name: change-background;
-	animation-timeline: view();
-	animation-range: entry contain;
-	animation-fill-mode: both;
-}
 
 .jazz{
-    background: var(--background-gradient-color-jazz);
+    /* background: var(--background-gradient-color-jazz); */
+    /* background-color: #c46240; */
+    /* height: 100%; */
+
+    grid-column: 1;
+    grid-row: 2 / 3;
+
+}
+
+.jazz h2{
+     grid-row: 1 / 2;
 
 }
 
 .afro{
-    background: var(--background-gradient-color-afro);
+    /* background: var(--background-gradient-color-afro); */
+    /* background-color: #801818; */
+    /* height: 100%; */
+
+    grid-column: 1;
+    grid-row: 2 / 3;
+
+}
+
+.afro h2{
+     grid-row: 3 / 4;
 
 }
 
 .rnb{
-    background: var(--background-gradient-color-rnb);
+    /* background: var(--background-gradient-color-rnb); */
+    /* background-color: #4A5D23; */
+    /* height: 100%; */
+
+    grid-column: 1;
+    grid-row: 3 / 4;
+
+}
+
+.rnb h2{
+       grid-row: 4 / 5;
 
 }
 
 .pop{
-    background: var(--background-gradient-color-pop);
+    /* background: var(--background-gradient-color-pop); */
+    /* background-color: #304955; */
+    /* height: 100%; */
 
+    grid-row: 1;
+    grid-row: 4 / 5;
+
+}
+
+.pop h2{
+   grid-row: 5 / 6;
 }
