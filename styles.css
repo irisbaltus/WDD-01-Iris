@@ -26,6 +26,9 @@
  --color-bullet-light-jazz: #fff;
 
  --font-color: #341c02;
+
+ --filter-bullet-dark: blur(7rem) drop-shadow(16px 16px 20px #A0785A);
+ --filter-bullet-light: blur(9rem) drop-shadow(16px 16px 20px #fff);
   
 
  /* --color-bullet-dark-afro: linear-gradient(#000 ,#0c263e, #12242c);
@@ -33,10 +36,10 @@
 
  color-scheme:light dark;
 
- --background-color-afro: light-dark(#EDEAE0, #c7525e);
- --background-color-jazz: light-dark(#FFF8E7, #273485);
- --background-color-rnb: light-dark(#F1E9D2, #273485);
- --background-color-pop: light-dark(#F0EAD6, #273a2f);
+ --background-color-afro: light-dark(#EDEAE0, #540e15);
+ --background-color-jazz: light-dark(#FFF8E7, #341e09);
+ --background-color-rnb: light-dark(#F1E9D2, #3a1c04);
+ --background-color-pop: light-dark(#F0EAD6, #504704);
 
 
  --font-color: light-dark(#341c02, #FFFAF0);
@@ -54,8 +57,8 @@
 --color-bullet-light:linear-gradient(#fff, #faeed9);
 --color-bullet-dark:linear-gradient(#C3B091, #E3DAC9);
 
---filter-bullet-light: filter: blur(9rem) drop-shadow(16px 16px 20px #fff);
---filter-bullet-dark: filter: blur(7rem) drop-shadow(16px 16px 20px #A0785A);
+--filter-bullet-light: blur(9rem) drop-shadow(16px 16px 20px #fff);
+--filter-bullet-dark: blur(7rem) drop-shadow(16px 16px 20px #A0785A);
 
 
  /* --color-bullet-light-afro: light-dark(linear-gradient(#fff, #faeed9, #caa78e), linear-gradient(#000 ,#0c263e, #12242c));
@@ -67,11 +70,15 @@
  --font-montserrat-reg: 'MontserratReg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  --font-montserrat-italic-bold: 'MontserratItalicBold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  --font-montserrat-bold: 'MontserratBold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- --font-bantley: 'Bantley', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ --font-switserland: 'Switserland', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     @media (prefers-color-scheme: dark){
-            --color-bullet-light:linear-gradient(#D5A67D, #faeed9, #caa78e);
-            --color-bullet-dark:linear-gradient(#000 ,#0A1A23, #0C2C49); 
+            --color-bullet-light:linear-gradient(#8e6846, #7b6a4d, #715c4c);
+            --color-bullet-dark:linear-gradient(#382a02, #5a3b03, #5a440d); 
+
+            --filter-bullet-light: blur(9rem) drop-shadow(16px 16px 20px #7b6a4d);
+            --filter-bullet-dark: blur(7rem) drop-shadow(16px 16px 20px #382a02);
+
     }
  
 }
@@ -102,22 +109,16 @@ html{
 
 
 @font-face {
-    font-family: 'Bantley';
-    src: url('./fonts/gwbantleyregulartrial-j9dzv.ttf');
+    font-family: 'Switserland';
+    src: url('./fonts/Switzerland.ttf');
 }
-
-
-
-
 
 body{
     color: var(--font-color);
     overflow-x: hidden;
     height: 100%;
     background: linear-gradient(#9f9f93, #a19686);
-    /* background-color: rgb(48, 73, 85); */
 }
-
 
 h1{
     font-family:var(--font-montserrat-bold);
@@ -125,9 +126,21 @@ h1{
     align-self: baseline;
 
     margin: var(--margin-width);
+    padding: var(--margin-width);
     /* z-index: 10; */
     font-size: min(2rem, 8vw);
 }
+
+h1 span:first-of-type{
+    background: var(--background-color-jazz);
+    margin: calc(-2 * (var(--margin-width)));
+    display: inline-flex;
+    width: 3.5em;
+    position: relative;
+    padding: var(--margin-width);
+    z-index: 10;
+}
+
 .font-italic{
     font-family:var(--font-montserrat-italic-bold);
     animation-name: studioSwipe;
@@ -144,7 +157,7 @@ h1{
 
     }
     to{
-        translate: .25em 0;
+        translate: calc((2 * var(--margin-width)) + .25em)  0;
     }
 }
 
@@ -156,7 +169,7 @@ header{
 }
 
 h2{
-    font-size: min(1.5rem, 6vw);
+    font-size: min(1.5rem, 5vw);
     margin: var(--margin-width);
     font-family:var(--font-montserrat-reg);
     font-weight: 100;
@@ -168,8 +181,9 @@ h2{
     align-items: baseline;
 
     z-index: 100;
-    transform: translateY(.5rem);
+    transform: translateY(4rem);
 }
+
 
 main{
     display: flex;
@@ -178,7 +192,7 @@ main{
 
 .chic-font{
     font-size: min(4rem, 15vw);
-    font-family: var(--font-bantley);
+    font-family: var(--font-switserland);
     font-weight: 100;
     margin-left: .2em;
 
@@ -186,7 +200,7 @@ main{
     margin: var(--margin-width);
     /* omdat span een inline element is, moet dit een breedte hoogte en display:block kriigen anders werkt de animatie niet */
    
-    transform: translateY(0);
+    transform: translateY(1.5rem);
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 
@@ -213,6 +227,9 @@ main{
 .lookbook-text{
     animation-range: 700vh 900vh;
 
+}
+.students-text{
+    animation-range: 900vh 1150vh;
 }
 
 
@@ -259,7 +276,7 @@ main{
 }
 
 .gradient-container-section{
-    height: 900vh;
+    height: 1150vh;
     position: absolute;
     top: 0;
 }
@@ -273,8 +290,8 @@ section{
 
 article{
     height: 200svh;
-    border: hotpink 1px solid;
-
+    /* border: hotpink 1px solid; */
+    
     display: flex;
     justify-content: center;
 	align-items: center;
@@ -295,7 +312,7 @@ article div{
     top: 0;
     height: 100svh;
     width: 100vw;
-    border: 1px solid teal;
+    /* border: 1px solid teal; */
     
 
     display: grid;
@@ -305,7 +322,7 @@ article div{
     img{
         width: min(20em, 60vw);
         aspect-ratio: inherit;
-        z-index: 200;
+        /* z-index: 200; */
         /* opacity: 1; */
 
         animation-name: imageOpacityBlur;
@@ -324,7 +341,7 @@ article div{
             filter: blur(.2rem);
 
         }
-        70%{
+        70%, 50%, 60%{
             /* filter:blur(0rem); */
             opacity: 1;
             scale: 1;
@@ -341,7 +358,7 @@ article div{
     border-radius: 70%;
     z-index: 10;
     /* filter: var(--filter-bullet-dark); */
-    filter: blur(7rem) drop-shadow(16px 16px 20px #A0785A);
+    filter: var(--filter-bullet-dark);
     
 }
 
@@ -351,18 +368,7 @@ article div{
     border-radius: 50%;
     z-index: 5;
     /* filter: var(--filter-bullet-light); */
-    filter: blur(9rem) drop-shadow(16px 16px 20px #fff)
-}
-
-.fashion img, .concept img, .shadows img, .lookbook img{
-    /* grid-column: 1 / -1;
-    grid-row: 1 / -1;
-
-    align-self: center;
-    justify-self: center;
-    border: .08rem solid var(--font-color); */
-/* 
-    filter: drop-shadow(1px 10px 6px var(--font-color)); */
+    filter: var(--filter-bullet-light);
 }
 
 
@@ -499,3 +505,39 @@ article div{
 .lookbook h2{
    grid-row: 5 / 6;
 }
+
+
+p{
+    font-family: var(--font-montserrat-reg);
+    align-self: baseline;
+    font-weight: 250;
+}
+
+article:last-of-type img{
+    align-self: end;
+}
+
+.students {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .students img:hover{
+    transition: opacity 0.3 !important;
+} */
+
+#students-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(20em, 60vw);
+    
+}
+
+#students-container p{
+    margin: 0 var(--margin-width) 0 var(--margin-width);
+
+}
+
