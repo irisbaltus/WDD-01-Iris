@@ -538,6 +538,8 @@ article:last-of-type img{
 
 #students-container p{
     margin: 0 var(--margin-width) 0 var(--margin-width);
+    font-weight: 700;
+    color: #FFF8E7;
 
 }
 
